@@ -1,0 +1,1 @@
+## This project includes homework assignments given within Automation Academy in Getir
