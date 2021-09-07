@@ -51,6 +51,13 @@ public class SalaryCalculator {
         double finalSalary = 0 ;
         baseSalary = getHourlyWage() * getTotalWorkingHours() ;
         finalSalary = baseSalary + (((extraWorkingWeekDayHours * 1.5) + (extraWorkingWeekendHours * 2)) * getHourlyWage()) ;
+        if (isBonusEnabled()){
+            finalSalary += 500 ;
+        }
         return finalSalary ;
+    }
+
+    private boolean isBonusEnabled(){
+        return this.extraWorkingWeekDayHours > 0 && this.extraWorkingWeekendHours > 10;
     }
 }
