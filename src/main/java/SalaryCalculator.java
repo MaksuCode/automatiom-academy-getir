@@ -1,10 +1,13 @@
+import java.util.Scanner;
+
 public class SalaryCalculator {
 
     private double baseSalary ;
-    private int totalWorkingHours = 40 ;
-    private int extraWorkingWeekDayHours = 0 ;
-    private int extraWorkingWeekendHours = 0 ;
+    private int totalWorkingHours = 0 ;
+    private int workingWeekdayHours = 0 ;
+    private int workingWeekendHours = 0 ;
     private double hourlyWage ;
+    static Scanner scanner = new Scanner(System.in) ;
 
     public void setBaseSalary(double baseSalary) {
         if (baseSalary < 1000){
@@ -14,33 +17,22 @@ public class SalaryCalculator {
         this.hourlyWage = this.baseSalary / 40 ;
     }
 
-    public int getTotalWorkingHours() {
-        return totalWorkingHours;
-    }
-
     public void calculateTotalWorkingHours() {
-        totalWorkingHours +=  this.extraWorkingWeekendHours + this.extraWorkingWeekDayHours ;
+        totalWorkingHours +=  this.workingWeekendHours + this.workingWeekdayHours;
     }
 
-    public void setTotalWorkingHours(int totalWorkingHours) {
-        if (totalWorkingHours <= 0 ){
-            totalWorkingHours = 40 ;
+    public void setWorkingWeekdayHours(int workingWeekdayHours) {
+        if (workingWeekdayHours < 0){
+            workingWeekdayHours = 0 ;
         }
-        this.totalWorkingHours = totalWorkingHours;
+        this.workingWeekdayHours = workingWeekdayHours;
     }
 
-    public void setExtraWorkingWeekDayHours(int extraWorkingWeekDayHours) {
-        if (extraWorkingWeekDayHours < 0){
-            extraWorkingWeekDayHours = 0 ;
+    public void setWorkingWeekendHours(int workingWeekendHours) {
+        if (workingWeekendHours < 0 ){
+            workingWeekendHours = 0 ;
         }
-        this.extraWorkingWeekDayHours = extraWorkingWeekDayHours;
-    }
-
-    public void setExtraWorkingWeekendHours(int extraWorkingWeekendHours) {
-        if (extraWorkingWeekendHours < 0 ){
-            extraWorkingWeekendHours = 0 ;
-        }
-        this.extraWorkingWeekendHours = extraWorkingWeekendHours;
+        this.workingWeekendHours = workingWeekendHours;
     }
 
     public double getHourlyWage() {
@@ -48,16 +40,40 @@ public class SalaryCalculator {
     }
 
     public double calculateFinalSalary(){
-        double finalSalary = 0 ;
-        baseSalary = getHourlyWage() * getTotalWorkingHours() ;
-        finalSalary = baseSalary + (((extraWorkingWeekDayHours * 1.5) + (extraWorkingWeekendHours * 2)) * getHourlyWage()) ;
-        if (isBonusEnabled()){
-            finalSalary += 500 ;
-        }
-        return finalSalary ;
+        double finalSalary = this.baseSalary ;
+        double extraMoneyForWeekend = 0 ;
+        double extraMoneyForWeekday = 0 ;
+
+        // TODO: 14.09.2021 Fix logic here.
+
+        return 0 ;
+
+
     }
 
-    private boolean isBonusEnabled(){
-        return this.extraWorkingWeekDayHours > 0 && this.extraWorkingWeekendHours > 10;
+
+    public static void main(String[] args) {
+        SalaryCalculator calculator = new SalaryCalculator();
+
+        System.out.println("Enter your base salary : ");
+        calculator.setBaseSalary(scanner.nextInt());
+
+        System.out.println("How many hours did you work on weekdays ? : ");
+        calculator.setWorkingWeekdayHours(scanner.nextInt());
+
+        System.out.println("How many hours did you work on weekends ? : ");
+        calculator.setWorkingWeekendHours(scanner.nextInt());
+
+        calculator.calculateTotalWorkingHours();
+
+        System.out.println(calculator.calculateFinalSalary());
+
+
+
+
     }
+
+    // TODO: 9.09.2021 hafta için 30 saat hafta sonu 20 saat çalıştığı case
+    // TODO: 9.09.2021 Ayrıca control tablosuna göre test yaz.
+
 }
