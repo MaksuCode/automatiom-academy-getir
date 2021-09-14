@@ -7,6 +7,7 @@ public class SalaryCalculator {
     private int workingWeekdayHours = 0 ;
     private int workingWeekendHours = 0 ;
     private double hourlyWage ;
+    private int years ;
     static Scanner scanner = new Scanner(System.in) ;
 
     public void setBaseSalary(double baseSalary) {
@@ -15,6 +16,10 @@ public class SalaryCalculator {
         }
         this.baseSalary = baseSalary;
         this.hourlyWage = this.baseSalary / 40 ;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
     }
 
     public void calculateTotalWorkingHours() {
@@ -43,37 +48,51 @@ public class SalaryCalculator {
         double finalSalary = this.baseSalary ;
         double extraMoneyForWeekend = 0 ;
         double extraMoneyForWeekday = 0 ;
-
         // TODO: 14.09.2021 Fix logic here.
-
         return 0 ;
-
-
     }
 
+    public void setYears(int years) {
+        if(years < 0){
+            years = 0 ;
+        }
+        this.years = years;
+    }
+
+    public int getYears() {
+        return years;
+    }
+
+    /*
+     Calculates the final base salary after the yearly increase is made.
+     */
+    public void calculateBaseSalaryAfterYearlyIncrease(){
+        double increase;
+        // Setting the limit as 5 for years bigger than 5. This makes code much more easy.
+        if (years > 5){
+            years = 5 ;
+        }
+        // Basically calculating the increase. This formula would apply to every "year" value.
+        increase = baseSalary * years * (0.05) ;
+        // Adding increase to baseSalary.
+        this.baseSalary += increase ;
+    }
 
     public static void main(String[] args) {
-        SalaryCalculator calculator = new SalaryCalculator();
 
-        System.out.println("Enter your base salary : ");
+        SalaryCalculator calculator = new SalaryCalculator() ;
+        // Requesting user's base salary and setting it to "baseSalary" variable.
+        System.out.println("Please enter your base salary : ");
         calculator.setBaseSalary(scanner.nextInt());
-
-        System.out.println("How many hours did you work on weekdays ? : ");
-        calculator.setWorkingWeekdayHours(scanner.nextInt());
-
-        System.out.println("How many hours did you work on weekends ? : ");
-        calculator.setWorkingWeekendHours(scanner.nextInt());
-
-        calculator.calculateTotalWorkingHours();
-
-        System.out.println(calculator.calculateFinalSalary());
-
-
-
+        // Requesting user's count of working years and setting it to "years" variable.
+        System.out.println("For how many years have you been working for the company : ");
+        calculator.setYears(scanner.nextInt());
+        // Calling "calculateBaseSalaryAfterYearlyIncrease" method to calculate final base salary.
+        calculator.calculateBaseSalaryAfterYearlyIncrease();
+        // Printing out the result.
+        System.out.println("Your base salary after increase is : " + calculator.getBaseSalary());
 
     }
 
-    // TODO: 9.09.2021 hafta için 30 saat hafta sonu 20 saat çalıştığı case
-    // TODO: 9.09.2021 Ayrıca control tablosuna göre test yaz.
 
 }
