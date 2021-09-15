@@ -22,7 +22,9 @@ public class Dice {
             if (number == 1 || number == 2){
                 rollingEnabled = false ;
                 System.out.println("Game is over!");
-            }else if (number == 4 || number == 5 || number == 6){
+            }else if (number == 3){
+                System.out.println("Try again!");
+            }else {
                 totalEarning += number ;
                 System.out.println("You earned " + number + " $");
             }
@@ -30,10 +32,11 @@ public class Dice {
                 rollingEnabled = false ;
                 System.out.println("You have earned the maximum amount of money you can earn!");
             }
+            System.out.println("--------------------------------");
         }
 
         System.out.println("--------------------------------");
-        System.out.println("Total earning : " + totalEarning);
+        System.out.println("You rolled " + count +" times and earned : " + totalEarning + " $ in total!");
 
     }
 }
