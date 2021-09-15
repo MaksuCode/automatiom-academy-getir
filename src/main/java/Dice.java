@@ -36,7 +36,7 @@ public class Dice {
         }
 
         System.out.println("--------------------------------");
-        System.out.println("You rolled " + count +" times and earned : " + totalEarning + " $ in total!");
+        System.out.println("You rolled " + count +" time(s) and earned " + totalEarning + " $ in total!");
 
     }
 }
