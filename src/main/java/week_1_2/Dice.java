@@ -1,3 +1,5 @@
+package week_1_2;
+
 import java.util.Random;
 
 public class Dice {
@@ -14,7 +16,7 @@ public class Dice {
         int count = 0 ;
         boolean rollingEnabled = true ;
         Dice dice = new Dice();
-
+        
         while (rollingEnabled) {
             number = dice.roll() ;
             count += 1 ;

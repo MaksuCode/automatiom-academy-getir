@@ -1,3 +1,5 @@
+package week_1_2;
+
 import java.util.Scanner;
 
 public class SalaryCalculator {
@@ -80,7 +82,7 @@ public class SalaryCalculator {
 
     public static void main(String[] args) {
 
-        SalaryCalculator calculator = new SalaryCalculator() ;
+        week_1_2.SalaryCalculator calculator = new week_1_2.SalaryCalculator() ;
         // Requesting user's base salary and setting it to "baseSalary" variable.
         System.out.println("Please enter your base salary : ");
         calculator.setBaseSalary(scanner.nextInt());
