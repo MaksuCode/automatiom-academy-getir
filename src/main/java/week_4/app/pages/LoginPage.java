@@ -8,7 +8,6 @@ public class LoginPage extends Page{
 
     public LoginPage(Scanner scanner) {
         super(scanner);
-        System.out.println("-----------------------------");
         System.out.println("Please enter your username : ");
         this.user.setUsername(scanner.nextLine());
         System.out.println("Please enter your password : ");
@@ -16,7 +15,7 @@ public class LoginPage extends Page{
         System.out.println("-----------------------------");
     }
 
-    public Page validateUser(){
+    public Page startApp(){
         if (this.user.getUsername().equals(validUser.getUsername()) && this.user.getPassword().equals(validUser.getPassword())) {
             return new LandingPage(scanner);
         }else{

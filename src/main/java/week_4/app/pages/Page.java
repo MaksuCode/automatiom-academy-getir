@@ -15,11 +15,12 @@ public class Page {
     public Page(Scanner scanner){
         if (!this.getClass().getSimpleName().equals("Page")){
             System.out.println("      " + this.getClass().getSimpleName() + "     ");
+            System.out.println("-----------------------------");
         }
         this.scanner = scanner;
     }
 
-    public Page direct(){
+    public Page navigate(){
         return new Page(scanner);
     }
 

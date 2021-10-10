@@ -15,11 +15,11 @@ public class Profile extends Page{
         System.out.println("2 - Back to Landing Page");
         System.out.println("--------------------------");
         this.selection = scanner.nextLine();
-        direct();
+        navigate();
     }
 
     @Override
-    public Page direct() {
+    public Page navigate() {
         Page page ;
         switch (this.selection){
             case "1" :
@@ -46,11 +46,11 @@ public class Profile extends Page{
             this.validUser.setAddress(scanner.nextLine());
             System.out.println("Profile updated....");
             System.out.println("----------------------");
-            direct();
+            navigate();
         }
 
         @Override
-        public Page direct() {
+        public Page navigate() {
             return new Profile(scanner);
         }
     }

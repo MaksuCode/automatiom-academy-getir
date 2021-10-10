@@ -1,10 +1,11 @@
 package week_4.app.pages;
 
-public class CartPage {
+import java.util.Scanner;
 
-    
-
-
+public class CartPage extends Page {
 
 
+    public CartPage(Scanner scanner) {
+        super(scanner);
+    }
 }

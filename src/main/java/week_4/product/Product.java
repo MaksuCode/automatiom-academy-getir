@@ -37,15 +37,6 @@ public class Product {
         return reducedPrice;
     }
 
-//    public void displayInfo(){
-//        System.out.println(this.getName());
-//        System.out.println(this.getDescription());
-//        System.out.println(this.getPrice());
-//        if (this.reducedPrice != 0){
-//            System.out.println(this.getReducedPrice());
-//        }
-//    }
-
 }
 
 

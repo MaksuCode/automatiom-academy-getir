@@ -14,11 +14,11 @@ public class LandingPage extends Page {
         System.out.println("4 - Exit");
         System.out.println("-------------------------");
         this.selection = scanner.nextLine();
-        direct();
+        navigate();
     }
 
     @Override
-    public Page direct(){
+    public Page navigate(){
         Page page ;
         switch (this.selection){
             case "1" :

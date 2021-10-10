@@ -10,10 +10,10 @@ public class FruitAndVegetable extends MainCategory{
 
     public FruitAndVegetable() {
         this.name = "Fruits and Vegetables" ;
-        this.id = 2 ;
         this.fruitSubCategory = new FruitSubCategory() ;
         this.vegetableSubCategory = new VegetableSubCategory() ;
+        this.subCategories.add(fruitSubCategory);
+        this.subCategories.add(vegetableSubCategory);
     }
-
 
 }

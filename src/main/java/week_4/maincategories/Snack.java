@@ -10,17 +10,10 @@ public class Snack extends MainCategory{
 
     public Snack() {
         this.name = "Snack" ;
-        this.id = 3 ;
         this.chocolateSubCategory = new ChocolateSubCategory() ;
         this.chipsSubCategory = new ChipsSubCategory() ;
-    }
-
-    public ChocolateSubCategory chocolateSubCategory() {
-        return chocolateSubCategory;
-    }
-
-    public ChipsSubCategory chipsSubCategory() {
-        return chipsSubCategory;
+        this.subCategories.add(chocolateSubCategory);
+        this.subCategories.add(chipsSubCategory);
     }
 
 }

@@ -10,16 +10,10 @@ public class Breakfast extends MainCategory{
 
     public Breakfast() {
         this.name = "Breakfast" ;
-        this.id = 1 ;
         this.milkSubCategory = new MilkSubCategory() ;
         this.delicatessenSubCategory = new DelicatessenSubCategory() ;
+        this.subCategories.add(milkSubCategory);
+        this.subCategories.add(delicatessenSubCategory);
     }
 
-    public MilkSubCategory milkSubCategory() {
-        return milkSubCategory;
-    }
-
-    public DelicatessenSubCategory delicatessenSubCategory() {
-        return delicatessenSubCategory;
-    }
 }
