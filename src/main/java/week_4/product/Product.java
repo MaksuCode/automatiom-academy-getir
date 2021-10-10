@@ -1,4 +1,4 @@
-package week_4.products;
+package week_4.product;
 
 public class Product {
 

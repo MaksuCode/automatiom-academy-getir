@@ -1,32 +1,24 @@
-package week_4;
+package week_4.app;
 
-import week_4.maincategories.Breakfast;
-import week_4.maincategories.FruitAndVegetable;
-import week_4.maincategories.Snack;
-import week_4.product.Product;
+import week_4.app.pages.LoginPage;
+
+import java.util.Scanner;
 
 public class App {
 
-
-    private static void createProduct
-
-
-
-
-
-
-
-
-
-
-
-
+    static Scanner sc = new Scanner(System.in);
+    static LoginPage loginPage;
 
     public static void main(String[] args) {
+        initialize();
+    }
 
-
-
-
+    private static void initialize(){
+        boolean loop = true;
+        loginPage = new LoginPage(sc);
+        while (loop){
+            loginPage.validateUser();
+        }
     }
 
 }
