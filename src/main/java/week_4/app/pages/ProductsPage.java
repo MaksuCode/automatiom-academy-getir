@@ -15,12 +15,35 @@ public class ProductsPage extends Page{
         super(scanner);
         this.subCategoryName = subCategoryName;
         products();
+        System.out.println("0 - Back to Sub Category");
+        System.out.println("9 - Go to cart page");
         this.selection = scanner.nextLine();
+        navigate();
     }
 
     @Override
     public Page navigate() {
-        return super.navigate();
+        Page page = new Page(scanner);
+        switch (this.selection){
+            case "0":
+                if (this.subCategoryName.equals("ChipsSubCategory") || this.subCategoryName.equals("ChocolateSubCategory")){
+                    page = new SubCategoryPage(scanner, "Snack");
+                }else if (this.subCategoryName.equals("DelicatessenSubCategory") || this.subCategoryName.equals("MilkSubCategory")){
+                    page = new SubCategoryPage(scanner, "Breakfast");
+                }else {
+                    page = new SubCategoryPage(scanner, "FruitAndVegetable");
+                }
+                break;
+
+            case "":
+
+                break;
+            case "9":
+                page = new CartPage(scanner);
+                break;
+
+        }
+        return page;
     }
 
     private void products(){
@@ -52,4 +75,5 @@ public class ProductsPage extends Page{
             i++;
         }
     }
+
 }

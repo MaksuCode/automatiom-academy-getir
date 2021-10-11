@@ -16,7 +16,7 @@ public class LoginPage extends Page{
     }
 
     public Page startApp(){
-        if (this.user.getUsername().equals(validUser.getUsername()) && this.user.getPassword().equals(validUser.getPassword())) {
+        if (this.user.getUsername().equals(manager.getProperty("username")) && this.user.getPassword().equals(manager.getProperty("password"))) {
             return new LandingPage(scanner);
         }else{
             System.out.println("Username or password is not correct! " );

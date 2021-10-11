@@ -7,9 +7,9 @@ public class Profile extends Page{
     public Profile(Scanner scanner) {
         super(scanner);
         System.out.println("--------------------------");
-        System.out.println("Username : " + this.validUser.getUsername());
-        System.out.println("Phone number : " + this.validUser.getPhone());
-        System.out.println("Address : " + this.validUser.getAddress());
+        System.out.println("Username : " + manager.getProperty("username"));
+        System.out.println("Phone number : " + manager.getProperty("phoneNumber"));
+        System.out.println("Address : " + manager.getProperty("address"));
         System.out.println("--------------------------");
         System.out.println("1 - Update profile");
         System.out.println("2 - Back to Landing Page");
@@ -39,11 +39,11 @@ public class Profile extends Page{
         public UpdateProfilePage(Scanner scanner) {
             super(scanner);
             System.out.println("Update username : ");
-            this.validUser.setUsername(scanner.nextLine());
+            manager.updateProperty("username", scanner.nextLine());
             System.out.println("Update phone number : ");
-            this.validUser.setPhone(scanner.nextLine());
+            manager.updateProperty("phoneNumber", scanner.nextLine());
             System.out.println("Update address: ");
-            this.validUser.setAddress(scanner.nextLine());
+            manager.updateProperty("address", scanner.nextLine());
             System.out.println("Profile updated....");
             System.out.println("----------------------");
             navigate();

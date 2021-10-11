@@ -31,10 +31,22 @@ public class SubCategoryPage extends Page{
                 page = new MainMenu(scanner);
                 break;
             case "1" :
-                page = new ProductsPage(scanner, "ChocolateSubCategory"); // TODO: 10.10.2021 test
+                if (this.mainCategoryName.equals("Breakfast")){
+                    page = new ProductsPage(scanner, "MilkSubCategory");
+                }else if (this.mainCategoryName.equals("Snack")){
+                    page = new ProductsPage(scanner,"ChocolateSubCategory");
+                }else {
+                    page = new ProductsPage(scanner,"FruitAndVegetable");
+                }
                 break;
             case "2" :
-
+                if (this.mainCategoryName.equals("Breakfast")){
+                    page = new ProductsPage(scanner, "DelicatessenSubCategory");
+                }else if (this.mainCategoryName.equals("Snack")){
+                    page = new ProductsPage(scanner,"ChipsSubCategory");
+                }else {
+                    page = new ProductsPage(scanner,"VegetableSubCategory");
+                }
                 break;
         }
         return page;
