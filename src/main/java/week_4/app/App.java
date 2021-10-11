@@ -1,7 +1,6 @@
 package week_4.app;
 
 import week_4.app.pages.LoginPage;
-import week_4.user.User;
 
 import java.util.Scanner;
 
@@ -9,7 +8,6 @@ public class App {
 
     static Scanner sc = new Scanner(System.in);
     static LoginPage loginPage;
-    static User user = new User();
 
     public static void main(String[] args) {
         initialize();
