@@ -39,7 +39,7 @@ public class ProductsPage extends Page{
 
                 break;
             case "9":
-                page = new CartPage(scanner);
+                page = new CartPage_1(scanner);
                 break;
 
         }
