@@ -4,13 +4,13 @@ import week_4.util.PropertyManager;
 
 import java.util.Scanner;
 
-public class CartPage extends Page {
+public class CartPage_1 extends Page {
 
     // TODO: 11.10.2021 Get data from properties file and update it
 
     PropertyManager manager;
 
-    public CartPage(Scanner scanner) {
+    public CartPage_1(Scanner scanner) {
         super(scanner);
         manager = new PropertyManager("/Users/mustafaaksu/Desktop/Java Projects/automatin-academy-getir/src/main/resources/cart.properties");
         getProducts();

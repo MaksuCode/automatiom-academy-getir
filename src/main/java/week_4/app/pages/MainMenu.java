@@ -38,7 +38,7 @@ public class MainMenu extends Page {
                 page = new Search(scanner);
                 break;
             case "5":
-                page = new CartPage(scanner);
+                page = new CartPage_1(scanner);
                 break;
             case "&":
                 page = new LandingPage(scanner);
