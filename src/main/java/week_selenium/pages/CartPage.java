@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CartPage extends BasePage{
 
@@ -15,6 +14,7 @@ public class CartPage extends BasePage{
     By updatedCartMessage = new By.ByCssSelector("div.woocommerce-message");
     By removeProductButton = new By.ByCssSelector("td.product-remove a");
     By emptyCartMessage = new By.ByCssSelector("p.cart-empty");
+    By proceedToCheckoutButton = new By.ByCssSelector("div.wc-proceed-to-checkout");
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -44,5 +44,9 @@ public class CartPage extends BasePage{
 
     public String getMessage() {
         return find(emptyCartMessage).getText();
+    }
+
+    public void proceedToCheckout(){
+        click(proceedToCheckoutButton);
     }
 }
